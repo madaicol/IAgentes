@@ -1,2 +1,39 @@
+<h1>Variables para las rutas</h1>
+<div class="row">
+  <div class="col-sm-12">
+    <!-- <form ng-submit="agregarNuevoEntrenador()"> -->
+    <form>
 
-<h1>Calcular Ruta</h1>
+        <label for="agClima">Clima</label>
+        <br>
+        <select name="agClima" id="agClima" ng-model="variables.agClima">
+          <option value="soleado">Soleado</option>
+          <option value="templado">Templado</option>
+          <option value="nublado">Nublado</option>
+          <option value="lluvia">Lluvia</option>
+          <option value="granizo">Granizo</option>
+        </select>
+        <br>
+        <label for="agTrafico">Tráfico</label>
+        <br>
+        <select name="agTrafico" id="agTrafico" ng-model="variables.agTrafico">
+          <option value="bajo">Bajo</option>
+          <option value="medio">Medio</option>
+          <option value="alto">Alto</option>
+        </select>
+        <br>
+        <label for="agDiaNoche">Día/Noche</label>
+        <br>
+        <select name="agDiaNoche" id="agDiaNoche" ng-model="variables.agDiaNoche">
+          <option value="dia">Día</option>
+          <option value="noche">Noche</option>
+        </select>
+        <br>
+
+      <p>
+        Seleccion: {{variables.agClima}} {{variables.agClima}} - {{variables.agTrafico}} - {{variables.agDiaNoche}}
+      </p>
+      <button class="btn btn-success">Enviar Parámetros</button>
+    </form>
+  </div>
+</div>
