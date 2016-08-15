@@ -1,10 +1,9 @@
 
 
 
-var applicacion = angular.module('prueba', ['ui.router','ngAnimate','ngResource','toastr']);
+var applicacion = angular.module('artificial', ['ui.router','ngAnimate','ngResource','toastr']);
 
 applicacion.config(function ($stateProvider, $urlRouterProvider) {
-
 
     //SI LA URL QUE INGRESA EL USUARIO NO EXISTE SE REDIRIGE AQUI:
     $urlRouterProvider.otherwise("/vista1");
@@ -24,7 +23,3 @@ applicacion.config(function ($stateProvider, $urlRouterProvider) {
 
 
 });
-
-
-
-
