@@ -1,44 +1,64 @@
-<style>body{
-	margin:0;
-	color:#444;
-	background:#00c380;
-	font:300 18px/18px Roboto, sans-serif;
-}</style>
-<h1>Variables para las rutas</h1>
+<style>
+    body {
+        margin: 0;
+        color: #444;
+        background: #00c380;
+        font: 300 18px/18px Roboto, sans-serif;
+    }
+</style>
+<h1>Variables para las rutas Bayesiana</h1>
 <div class="row">
 
     <div class="col-sm-6">
         <!-- <form ng-submit="agregarNuevoEntrenador()"> -->
         <form>
+            <label for="idRuta">Ruta</label>
+            <br>
+            <select name="idRuta" id="idRuta" ng-model="idRuta">
+                <option value="ruta1">Ruta1</option>
+                <option value="ruta2">Ruta2</option>
+                <option value="ruta3">Ruta3</option>
+                <option value="ruta4">Ruta4</option>
+                <option value="ruta5">Ruta5</option>
+                <option value="ruta6">Ruta6</option>
+                <option value="ruta7">Ruta7</option>
+                <option value="ruta8">Ruta8</option>
+                <option value="ruta9">Ruta9</option>
+                <option value="ruta10">Ruta10</option>
+            </select>
+            <br>
+            <br>
             <label for="clima">Clima</label>
             <br>
             <select name="clima" id="clima" ng-model="clima">
-                <option value="SOLEADO">Soleado</option>
-                <option value="TEMPLADO">Templado</option>
-                <option value="NUBLADO">Nublado</option>
-                <option value="LLUVIA">Lluvia</option>
-                <option value="GRANIZO">Granizo</option>
+                <option value="soleado">Soleado</option>
+                <option value="templado">Templado</option>
+                <option value="nublado">Nublado</option>
+                <option value="lluvia">Lluvia</option>
+                <option value="granizo">Granizo</option>
             </select>
-            <br><br>
+            <br>
+            <br>
             <label for="trafico">Tráfico</label>
             <br>
             <select name="trafico" id="trafico" ng-model="trafico">
-                <option value="BAJO">Bajo</option>
-                <option value="MEDIO">Medio</option>
-                <option value="ALTO">Alto</option>
+                <option value="bajo">Bajo</option>
+                <option value="medio">Medio</option>
+                <option value="alto">Alto</option>
             </select>
-            <br><br>
+            <br>
+            <br>
             <label for="dianoche">Día/Noche</label>
             <br>
             <select name="dianoche" id="dianoche" ng-model="dianoche">
-                <option value="DIA">Día</option>
-                <option value="NOCHE">Noche</option>
+                <option value="dia">Día</option>
+                <option value="noche">Noche</option>
             </select>
-            <br> <hr>
-            {{AmbienteImprimir}}
-            <button ng-click="parametroAmbiente(clima,trafico,dianoche)" class="btn btn-success">Enviar Parámetros</button>
+            <br>
+            <hr> {{AmbienteImprimir}} <br>
+            {{AmbienteImprimir2}} <br>
+            {{arreglo}}
+            <button ng-click="parametroAmbiente(idRuta,clima,trafico,dianoche)" class="btn btn-success">Enviar Parámetros</button>
         </form>
     </div>
-
-
 </div>
