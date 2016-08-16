@@ -24,7 +24,14 @@ applicacion.config(function ($stateProvider, $urlRouterProvider) {
             url: "/portada",
             templateUrl: "Angular/Rutas/portada.html",
             controller: 'portadacontroller'
-        });
+        // })
+        // // .state('rutaDetail', {
+        // // url: '/variables/:rutaID',
+        // // controller: function($scope, $stateParams) {
+        // //     // get the id
+        // //     $scope.id = $stateParams.rutaID;
+        // // }
+    });
 
 
 });

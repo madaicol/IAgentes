@@ -1,33 +1,50 @@
 applicacion.controller('variablescontroller', ['$scope', 'toastr', '$http', function($scope, toastr, $http) {
-    toastr.info('Info', 'Entraste a la vista 1');
-    // $scope.Clima = "Soleado";
-    $scope.parametroAmbiente = {
-        agClima: null,
-        agTrafico: null,
-        agDiaNoche: null,
-        agIdAgente: null
-    }
+    toastr.info('Información', 'Ingreso de variables para simulacion');
+    // $stateProvider.state(stateName, stateConfig);
 
-    var paramPeaton_Auto_Baches_IdAgente = ["ALTO", "MEDIO", "BAJO"];
-    var paramSenalesTransito = ["NULO", "MINIMO", "NORMAL", "ALTO", ];
-    var prueba = ["", "", "", "", "", "", "", "", "", "", ];
+    // var paramClima = ["SOLEADO", "TEMPLADO", "NUBLADO", "LLUVIA", "GRANIZO"];
+    // var paramTraf = ["BAJO", "MEDIO", "ALTO"];
+    // var paramDN = ["DIA", "NOCHE"];
 
-    for (var i = 0; i < 10; i++) {
-        prueba[i] = [paramPeaton_Auto_Baches_IdAgente[Math.floor(Math.random() * 3)],paramPeaton_Auto_Baches_IdAgente[Math.floor(Math.random() * 3)],paramPeaton_Auto_Baches_IdAgente[Math.floor(Math.random() * 3)],paramSenalesTransito[Math.floor(Math.random() * 4)]];
-    }
-    console.log(prueba);
+    $scope.parametroAmbiente = function(clima, trafico, dianoche) {
+
+        $scope.clima = clima;
+        $scope.trafico = trafico;
+        $scope.dianoche = dianoche;
 
 
-    $scope.parametroRuta = {
-        agPeaton: paramPeaton_Auto_Baches_IdAgente[Math.floor(Math.random() * 3)],
-        agAuto: paramPeaton_Auto_Baches_IdAgente[Math.floor(Math.random() * 3)],
-        agBaches: paramPeaton_Auto_Baches_IdAgente[Math.floor(Math.random() * 3)],
-        agIdAgente: paramPeaton_Auto_Baches_IdAgente[Math.floor(Math.random() * 3)],
-        agSenalesTransito: paramSenalesTransito[Math.floor(Math.random() * 4)]
-    }
+        var parametroListaAmbiente = ["", "", "", "", "", "", "", "", "", ""];
 
-    $scope.agregarNuevaVariable = function() {
+        for (var i = 0; i < 10; i++) {
+            parametroListaAmbiente[i] = {
+                idRuta: i,
+                clima: $scope.clima,
+                trafico: $scope.trafico,
+                dianoche: $scope.dianoche
+            };
+        }
+        console.log(parametroListaAmbiente);
+        $scope.AmbienteImprimir = parametroListaAmbiente;
 
     }
+
+      $http({
+          method: 'POST',
+          url: 'http://localhost:8080/ProyectoFinal/rest/Simulacion',
+          data:$scope.AmbienteImprimir          
+      }).then(
+          function correctoLlamoEntrenadores(respuesta) {
+              console.log(respuesta);
+              $scope.entrenadores.push(respuesta.data);
+          },
+          function errorNoLlamoEntrenadores(error) {
+              console.log(error);
+          });
+
+
+
+
+
+
 
 }]);

@@ -1,2 +1,17 @@
+<style>
+    body {
+        margin: 0;
+        color: #444;
+        background: #00c380;
+        font: 300 18px/18px Roboto, sans-serif;
+    }
+</style>
 
-<h1>Vista 2</h1>
+<div class="row">
+    <div class="col-md-8">
+      <table>
+      <tr align="center" ><th>Número de ruta</th> <th>Clima</th>  <th>Tráfico</th>  <th>DIA/NOCHE</th></tr>
+      <tr ng-repeat="ruta in listaRutas" align="center"><td>{{ruta.idRuta}}</td><td>{{ruta.clima}}</td><td>{{ruta.trafico}}</td><td>{{ruta.dianoche}}</td></tr>
+    </table>
+    </div>
+</div>

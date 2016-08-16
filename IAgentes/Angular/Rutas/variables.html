@@ -1,41 +1,44 @@
+<style>body{
+	margin:0;
+	color:#444;
+	background:#00c380;
+	font:300 18px/18px Roboto, sans-serif;
+}</style>
 <h1>Variables para las rutas</h1>
 <div class="row">
-  <div class="col-sm-12">
-    <!-- <form ng-submit="agregarNuevoEntrenador()"> -->
-    <form>
 
-        <label for="agClima">Clima</label>
-        <br>
-        <select name="agClima" id="agClima" ng-model="parametroAmbiente.agClima">
-          <option value="SOLEADO">Soleado</option>
-          <option value="TEMPLADO">Templado</option>
-          <option value="NUBLADO">Nublado</option>
-          <option value="LLUVIA">Lluvia</option>
-          <option value="GRANIZO">Granizo</option>
-        </select>
-        <br>
-        <label for="agTrafico">Tráfico</label>
-        <br>
-        <select name="agTrafico" id="agTrafico" ng-model="parametroAmbiente.agTrafico">
-          <option value="BAJO">Bajo</option>
-          <option value="MEDIO">Medio</option>
-          <option value="ALTO">Alto</option>
-        </select>
-        <br>
-        <label for="agDiaNoche">Día/Noche</label>
-        <br>
-        <select name="agDiaNoche" id="agDiaNoche" ng-model="parametroAmbiente.agDiaNoche">
-          <option value="DIA">Día</option>
-          <option value="NOCHE">Noche</option>
-        </select>
-        <br>
+    <div class="col-sm-6">
+        <!-- <form ng-submit="agregarNuevoEntrenador()"> -->
+        <form>
+            <label for="clima">Clima</label>
+            <br>
+            <select name="clima" id="clima" ng-model="clima">
+                <option value="SOLEADO">Soleado</option>
+                <option value="TEMPLADO">Templado</option>
+                <option value="NUBLADO">Nublado</option>
+                <option value="LLUVIA">Lluvia</option>
+                <option value="GRANIZO">Granizo</option>
+            </select>
+            <br><br>
+            <label for="trafico">Tráfico</label>
+            <br>
+            <select name="trafico" id="trafico" ng-model="trafico">
+                <option value="BAJO">Bajo</option>
+                <option value="MEDIO">Medio</option>
+                <option value="ALTO">Alto</option>
+            </select>
+            <br><br>
+            <label for="dianoche">Día/Noche</label>
+            <br>
+            <select name="dianoche" id="dianoche" ng-model="dianoche">
+                <option value="DIA">Día</option>
+                <option value="NOCHE">Noche</option>
+            </select>
+            <br> <hr>
+            {{AmbienteImprimir}}
+            <button ng-click="parametroAmbiente(clima,trafico,dianoche)" class="btn btn-success">Enviar Parámetros</button>
+        </form>
+    </div>
 
-      <p>
-        Seleccion: {{parametroAmbiente.agClima}} {{parametroAmbiente.agClima}} - {{parametroAmbiente.agTrafico}} - {{parametroAmbiente.agDiaNoche}}
-        <br>
-        {{parametroRuta}}
-      </p>
-      <button class="btn btn-success">Enviar Parámetros</button>
-    </form>
-  </div>
+
 </div>
